@@ -1,10 +1,3 @@
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-  <!-- Sign petition end  -->
 
   <!-- Site Footer -->
   <footer class="site-footer">
@@ -20,13 +13,13 @@
         <li><a href="#" onclick="goto_p4_site('news_page');">News</a></li>
         <li><a href="#" onclick="goto_p4_site('about_page');">About</a></li>
         <li><a href="#" onclick="goto_p4_site('jobs_page');">Jobs</a></li>
-        <li><a href="#" onclick="goto_p4_site('faq_page');">FAQ</a></li>
-        <li><a href="#" onclick="goto_p4_site('insta_page');">Press</a></li>
+        <li><a href="#" onclick="goto_p4_site('press_page');">Press Centre</a></li>
       </ul>
 
       <ul class="list-unstyled footer-links-secondary">
         <li><a href="#" onclick="goto_p4_site('privacy_page');">Privacy</a></li>
-        <li><a href="#" onclick="goto_p4_site('coc_page');">Code of Conduct</a></li>
+        <li><a href="#" onclick="goto_p4_site('community_policy_page');">COMMUNITY POLICY</a></li>
+        <li><a href="#" onclick="goto_p4_site('search_archive_page');">SEARCH THE ARCHIVE</a></li>
       </ul>
 
       <p class="copyright-text col-md-8">
@@ -272,9 +265,9 @@ $('.en__field--text').each(function(){
 
 /* Configure Planet4 page links here*/
 /*Header links*/
-var p4_site_url = "https://dev.p4.greenpeace.org/international/";
-var p4_site_act_page = "https://dev.p4.greenpeace.org/international/act/";
-var p4_site_explore_page = "https://dev.p4.greenpeace.org/international/explore/";
+var p4_site_url = "https://www.greenpeace.org/international/";
+var p4_site_act_page = "https://www.greenpeace.org/international/act/";
+var p4_site_explore_page = "https://www.greenpeace.org/international/explore/";
 var p4_site_donate_btn = "https://secured.greenpeace.org/international/en/supportus/?_ga=2.256767427.937523877.1515410303-280997801.1515410303";
 var p4_site_search_page = "";
 
@@ -284,14 +277,14 @@ var p4_twitter_page = "https://www.twitter.com/greenpeace";
 var p4_yt_page = "https://www.youtube.com/greenpeace";
 var p4_instagram_page = "https://www.instagram.com/greenpeace/";
 
-var p4_site_news_page = "https://dev.p4.greenpeace.org/international/?s=+&orderby=relevant&f%5Bctype%5D%5BPost%5D=3";
-var p4_site_about_page = "";
+var p4_site_news_page = "https://www.greenpeace.org/international/?s=+&orderby=relevant&f%5Bctype%5D%5BPost%5D=3";
+var p4_site_about_page = "https://www.greenpeace.org/international/explore/about/";
 var p4_site_jobs_page = "https://www.linkedin.com/jobs/greenpeace-jobs/";
-var p4_site_faq_page = "";
-var p4_site_press_page = "";
+var p4_site_press_page = "https://www.greenpeace.org/international/press-centre/";
 
-var p4_site_privacy_page = "";
-var p4_site_coc_page = "";
+var p4_site_privacy_page = "https://www.greenpeace.org/international/privacy/";
+var p4_community_policy_page = "https://www.greenpeace.org/international/community-policy/";
+var p4_search_archive_page = "http://www.greenpeace.org/international/en/System-templates/Search-results/?adv=true&_ga=2.259297730.937523877.1515410303-280997801.1515410303";
 
 function goto_p4_site(page_id)
 {
@@ -345,9 +338,9 @@ function goto_p4_site(page_id)
 		window.location = p4_site_jobs_page;
 		return false;
 	}
-	else if(page_id == 'faq_page' && p4_site_faq_page != '')
+	else if(page_id == 'press_page' && p4_site_press_page != '')
 	{
-		window.location = p4_site_faq_page;
+		window.location = p4_site_press_page;
 		return false;
 	}
 	else if(page_id == 'privacy_page' && p4_site_privacy_page != '')
@@ -355,9 +348,14 @@ function goto_p4_site(page_id)
 		window.location = p4_site_privacy_page;
 		return false;
 	}
-	else if(page_id == 'coc_page' && p4_site_coc_page != '')
+	else if(page_id == 'community_policy_page' && p4_community_policy_page != '')
 	{
-		window.location = p4_site_coc_page;
+		window.location = p4_community_policy_page;
+		return false;
+	}
+	else if(page_id == 'search_archive_page' && p4_search_archive_page != '')
+	{
+		window.location = p4_search_archive_page;
 		return false;
 	}
 	else
