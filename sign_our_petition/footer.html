@@ -1,3 +1,11 @@
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <!-- Sign petition end  -->
+
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -36,8 +44,243 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <!-- File for all the custom JS that we write -->
-<script type="text/javascript" src="https://dev.p4.greenpeace.org/international/wp-content/themes/planet4-master-theme/assets/js/custom.js?ver=0.1.2"></script>
-<!-- <script type="text/javascript" src="take-action.js"></script> -->
+<!--<script type="text/javascript" src="custom.js"></script>-->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".step-info-wrap").click(function(){
+    if($(this).parent().hasClass('active')){
+      $(this).parent().removeClass('active');
+      }
+    else {
+      $('.col').removeClass('active');
+      $(this).parent().addClass('active');
+      }
+  });
+});
+
+
+$('.country-select-dropdown').click(function(){
+  $(this).parent().toggleClass('active-li');
+  $('.country-select-box').toggle();
+});
+
+$('.country-select-box .country-list li').click(function(){
+  $(this).parents('.country-select-box').find('li').removeClass('active');
+  $(this).addClass('active');
+});
+
+  // $(window).scroll(function() {
+  //   if ($(this).scrollTop() > 130){
+  //       $('.fixed-element, .md-navigation').addClass("sticky");
+  //   }
+  //   else{
+  //       $('.fixed-element, .md-navigation').removeClass("sticky");
+  //   }
+  // });
+// Footer JS goes in this
+// Header JS goes in this.
+
+$(document).on('click', [
+  '.navbar-dropdown-toggle',
+  '.country-dropdown-toggle',
+  '.navbar-search-toggle',
+].join(), function toggleNavDropdown(evt) {
+  evt.preventDefault();
+  evt.stopPropagation();
+
+  var $button = $(this);
+  var target = $button.data('target');
+  if (!target) {
+    throw new Error('Missing `data-target` attribute: specify the container to be toggled');
+  }
+  var toggleClass = $button.data('toggle');
+  if (!toggleClass) {
+    throw new Error('Missing `data-toggle` attribute: specify the class to toggle');
+  }
+
+  // Toggle visibility of the target specified via data-target.
+  $(target).toggleClass(toggleClass);
+  // Toggle aria-expanded attribute.
+  $button.attr('aria-expanded', function(i, attr) {
+    return attr === 'false' ? 'true' : 'false';
+  });
+});
+
+$(document).on('click', function closeInactiveMenus(evt) {
+  var clickedElement = evt.target;
+  $('.btn-navbar-toggle[aria-expanded="true"]').each(function(i, button) {
+    var $button = $(button);
+    var buttonTarget = $($button.data('target')).get( 0 );
+    if (buttonTarget && ! $.contains(buttonTarget, clickedElement)) {
+      // Spoof a click on the open menu's toggle to close that menu.
+      $button.trigger('click');
+    }
+  });
+});
+/**
+ * Close the menu if the user clicks the dedicated dropdown close button.
+ */
+$(document).on('click', '.close-navbar-dropdown', function (evt) {
+  evt.preventDefault();
+  // Proxy to the main navbar close button
+  $('.navbar-dropdown-toggle').trigger('click');
+});
+
+// Hide Header on on scroll down
+if($( window ).width() <= 768) {
+  var didScroll;
+  var lastScrollTop = 0;
+  var delta = 5;
+  var navbarHeight = $('.top-navigation').outerHeight();
+  $(window).scroll(function(event){
+      didScroll = true;
+  });
+  setInterval(function() {
+      if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+      }
+  }, 250);
+  function hasScrolled() {
+      var st = $(this).scrollTop();
+      if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+      if (st > lastScrollTop && st > navbarHeight){
+          $('.top-navigation').removeClass('nav-down').addClass('nav-up');
+      } else {
+          if(st + $(window).height() < $(document).height()) {
+              $('.top-navigation').removeClass('nav-up').addClass('nav-down');
+          }
+      }
+      lastScrollTop = st;
+  }
+  var $slider = $('.mobile-menus');
+  $(document).click(function() {
+    if($('.menu').hasClass('active')){
+    //Hide the menus if visible
+    $slider.animate({
+      left: parseInt($slider.css('left'),10) == 0 ?
+       -320 : 0
+    });
+    $('.menu').removeClass('active');
+    }
+    if($('.search-box').hasClass('active')){
+    //Hide the search if visible
+    $searchBox.slideToggle().toggleClass('active');;
+    }
+  });
+
+  $('.menu').click(function() {
+    event.stopPropagation();
+    $(this).toggleClass('active');
+    $slider.animate({
+      left: parseInt($slider.css('left'),10) == -320 ?
+       0 : -320
+    });
+  });
+
+  var $searchBox = $('#search .search-box');
+  var $searchTrigger = $('#search-trigger');
+
+  $searchTrigger.on('click', function(e) {
+    event.stopPropagation();
+      $searchBox.slideToggle().toggleClass('active');
+  });
+};
+
+$(function() {
+	$('.publications-slider').slick({
+		infinite:       false,
+		mobileFirst:    true,
+		slidesToShow:   2.2,
+		slidesToScroll: 1,
+		arrows:         false,
+		dots:           false,
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: { slidesToShow: 4 }
+			},
+			{
+				breakpoint: 768,
+				settings: { slidesToShow: 3 }
+			},
+			{
+				breakpoint: 576,
+				settings: { slidesToShow: 2 }
+			}
+		]
+	});
+});
+
+
+$(function() {
+  $('#search-type button').click(function() {
+     $('#search-type button').removeClass("active");
+    $(this).addClass("active");
+    });
+
+  $('.btn-filter').click(function() {
+    $('#filtermodal').modal('show');
+    });
+});
+// Index for #carousel-wrapper-header
+currentIndexheader = $('#carousel-wrapper-header .carousel-item.active').next('.carousel-item').find('img').attr('src');
+
+$('#carousel-wrapper-header').on('slid.bs.carousel', function () {
+  currentIndexheader = $('#carousel-wrapper-header .carousel-item.active').next('.carousel-item');
+  var e = currentIndexheader.find('img').attr('src');
+  // Last Index
+  if(e === 'undefined' || e === undefined) {
+    currentIndexheader = $('#carousel-wrapper-header .carousel-item').first('.carousel-item').find('img').attr('src');
+  } else {
+    currentIndexheader = currentIndexheader.find('img').attr('src');
+  }
+  $('#carousel-wrapper-header a.carousel-control-next').css('background-image', 'url(' + currentIndexheader + ')');
+
+});
+
+  $('#carousel-wrapper-header a.carousel-control-next').css('background-image', 'url(' + currentIndexheader + ')');
+</script>
+
+<!--EN additional scripts-->
+<script>
+$('.en__field__label').hide();
+
+$('#en__field_supporter_firstName').addClass( 'form-control' );
+$('#en__field_supporter_firstName').parent().addClass( 'form-group' );
+$('#en__field_supporter_firstName').css( 'width', '100%' );
+
+$('#en__field_supporter_lastName').addClass( 'form-control' );
+$('#en__field_supporter_lastName').parent().addClass( 'form-group' );
+$('#en__field_supporter_lastName').css( 'width', '100%' );
+
+$('#en__field_supporter_emailAddress').addClass( 'form-control' );
+$('#en__field_supporter_emailAddress').parent().addClass( 'form-group' );
+$('#en__field_supporter_emailAddress').css( 'width', '100%' );
+
+$('#en__field_supporter_country').addClass( 'form-control' );
+$('#en__field_supporter_country').parent().addClass( 'form-group' );
+
+$('.en__field__element--text').css("display","block");
+
+$('.en__field').css("padding-bottom","0px");
+
+$('.en__field__input--checkbox').parent().find('label').css("display","block");
+$('.en__field__input--checkbox').parent().find('label').addClass("form-check-label");
+$('.en__field__input--checkbox').parent().find('label').css("margin-top", "-25px");
+$('.en__field__input--checkbox').parent().find('label').css("margin-left", "25px");
+
+$('.en__submit').find('button').addClass( 'btn btn-primary btn-block' );
+
+$('.en__field--text').each(function(){
+	var input = $(this).find('input');
+	var label = $(this).find('label');
+	var labelText = label.text();
+	input.attr('placeholder', labelText);
+});
+
+</script>
 
 </body>
 </html>
