@@ -2055,7 +2055,6 @@ body.home { background-image: repeating-linear-gradient(-61deg, rgba(212, 236, 2
 
 /*# sourceMappingURL=style.css.map */
   </style>
-
   <style>
       /*Additional EN CSS fixes*/
       .en__field {
@@ -2082,13 +2081,13 @@ body.home { background-image: repeating-linear-gradient(-61deg, rgba(212, 236, 2
       <li class="nav-item">
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="act.html">Act</a>
+        <a class="nav-link" href="#" onclick="goto_p4_site('act_page');">Act</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="nav-link" href="#" onclick="goto_p4_site('explore_page');">Explore</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-donate" href="#">Donate</a>
+        <a class="btn btn-donate" href="#" onclick="goto_p4_site('donate_page');">Donate</a>
       </li>
     </ul>
     <button
@@ -2100,7 +2099,7 @@ body.home { background-image: repeating-linear-gradient(-61deg, rgba(212, 236, 2
     >
       <span class="screen-reader-text">Toggle search form</span>
     </button>
-    <form id="navbar-search" class="form nav-item nav-search-wrap">
+    <form id="navbar-search" class="form nav-item nav-search-wrap" onsubmit="search_form(); return false;">
       <input class="form-control" type="text" placeholder="Search" aria-label="Search">
       <button class="top-nav-search-btn" type="submit">
         <i class="fa fa-search"></i>
@@ -2114,7 +2113,7 @@ body.home { background-image: repeating-linear-gradient(-61deg, rgba(212, 236, 2
   <div class="skewed-overlay"></div>
   <div class="page-header page-sign-petition-page">
     <div class="page-header-background">
-      <!--Add background img here-->
+      <!--Add page background img here-->
       <img src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1735/sign-petition-header_small.jpg?v=1515405191000" class="page-header-image" />
     </div>
     <div class="petitionform">

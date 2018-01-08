@@ -10,23 +10,23 @@
   <footer class="site-footer">
     <div class="container">
       <ul class="footer-social-media list-unstyled col-md-8 col-lg-5">
-        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="#" onclick="goto_p4_site('fb_page');"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#" onclick="goto_p4_site('tw_page');"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#" onclick="goto_p4_site('yt_page');"><i class="fa fa-youtube-play"></i></a></li>
+        <li><a href="#" onclick="goto_p4_site('insta_page');"><i class="fa fa-instagram"></i></a></li>
       </ul>
 
       <ul class="list-unstyled footer-links">
-        <li><a href="#">News</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Jobs</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Press</a></li>
+        <li><a href="#" onclick="goto_p4_site('news_page');">News</a></li>
+        <li><a href="#" onclick="goto_p4_site('about_page');">About</a></li>
+        <li><a href="#" onclick="goto_p4_site('jobs_page');">Jobs</a></li>
+        <li><a href="#" onclick="goto_p4_site('faq_page');">FAQ</a></li>
+        <li><a href="#" onclick="goto_p4_site('insta_page');">Press</a></li>
       </ul>
 
       <ul class="list-unstyled footer-links-secondary">
-        <li><a href="#">Privacy</a></li>
-        <li><a href="#">Code of Conduct</a></li>
+        <li><a href="#" onclick="goto_p4_site('privacy_page');">Privacy</a></li>
+        <li><a href="#" onclick="goto_p4_site('coc_page');">Code of Conduct</a></li>
       </ul>
 
       <p class="copyright-text col-md-8">
@@ -68,17 +68,6 @@ $('.country-select-box .country-list li').click(function(){
   $(this).parents('.country-select-box').find('li').removeClass('active');
   $(this).addClass('active');
 });
-
-  // $(window).scroll(function() {
-  //   if ($(this).scrollTop() > 130){
-  //       $('.fixed-element, .md-navigation').addClass("sticky");
-  //   }
-  //   else{
-  //       $('.fixed-element, .md-navigation').removeClass("sticky");
-  //   }
-  // });
-// Footer JS goes in this
-// Header JS goes in this.
 
 $(document).on('click', [
   '.navbar-dropdown-toggle',
@@ -279,6 +268,104 @@ $('.en__field--text').each(function(){
 	var labelText = label.text();
 	input.attr('placeholder', labelText);
 });
+
+
+/* Configure Planet4 page links here*/
+/*Header links*/
+var p4_site_url = "https://dev.p4.greenpeace.org/international/";
+var p4_site_act_page = "https://dev.p4.greenpeace.org/international/act/";
+var p4_site_explore_page = "https://dev.p4.greenpeace.org/international/explore/";
+var p4_site_donate_btn = "https://secured.greenpeace.org/international/en/supportus/?_ga=2.256767427.937523877.1515410303-280997801.1515410303";
+var p4_site_search_page = "";
+
+/*Footer links*/
+var p4_fb_page = "https://www.facebook.com/greenpeace.international";
+var p4_twitter_page = "https://www.twitter.com/greenpeace";
+var p4_yt_page = "https://www.youtube.com/greenpeace";
+var p4_instagram_page = "https://www.instagram.com/greenpeace/";
+
+var p4_site_news_page = "https://dev.p4.greenpeace.org/international/?s=+&orderby=relevant&f%5Bctype%5D%5BPost%5D=3";
+var p4_site_about_page = "";
+var p4_site_jobs_page = "https://www.linkedin.com/jobs/greenpeace-jobs/";
+var p4_site_faq_page = "";
+var p4_site_press_page = "";
+
+var p4_site_privacy_page = "";
+var p4_site_coc_page = "";
+
+function goto_p4_site(page_id)
+{
+	if(page_id == 'act_page' && p4_site_act_page != '')
+	{
+		window.location = p4_site_act_page;
+		return false;
+	}
+	else if(page_id == 'explore_page' && p4_site_explore_page != '')
+	{
+		window.location = p4_site_explore_page;
+		return false;
+	}
+	else if(page_id == 'donate_page' && p4_site_donate_btn != '')
+	{
+		window.location = p4_site_donate_btn;
+		return false;
+	}
+	else if(page_id == 'fb_page' && p4_fb_page != '')
+	{
+		window.location = p4_fb_page;
+		return false;
+	}
+	else if(page_id == 'tw_page' && p4_twitter_page != '')
+	{
+		window.location = p4_twitter_page;
+		return false;
+	}
+	else if(page_id == 'yt_page' && p4_yt_page != '')
+	{
+		window.location = p4_yt_page;
+		return false;
+	}
+	else if(page_id == 'insta_page' && p4_instagram_page != '')
+	{
+		window.location = p4_instagram_page;
+		return false;
+	}
+	else if(page_id == 'news_page' && p4_site_news_page != '')
+	{
+		window.location = p4_site_news_page;
+		return false;
+	}
+	else if(page_id == 'about_page' && p4_site_about_page != '')
+	{
+		window.location = p4_site_about_page;
+		return false;
+	}
+	else if(page_id == 'jobs_page' && p4_site_jobs_page != '')
+	{
+		window.location = p4_site_jobs_page;
+		return false;
+	}
+	else if(page_id == 'faq_page' && p4_site_faq_page != '')
+	{
+		window.location = p4_site_faq_page;
+		return false;
+	}
+	else if(page_id == 'privacy_page' && p4_site_privacy_page != '')
+	{
+		window.location = p4_site_privacy_page;
+		return false;
+	}
+	else if(page_id == 'coc_page' && p4_site_coc_page != '')
+	{
+		window.location = p4_site_coc_page;
+		return false;
+	}
+	else
+	{
+		window.location = p4_site_url;
+		return false;
+	}
+}
 
 </script>
 
