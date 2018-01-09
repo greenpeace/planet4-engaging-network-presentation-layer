@@ -3,23 +3,23 @@
   <footer class="site-footer">
     <div class="container">
       <ul class="footer-social-media list-unstyled col-md-8 col-lg-5">
-        <li><a href="#" onclick="goto_p4_site('fb_page');"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#" onclick="goto_p4_site('tw_page');"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#" onclick="goto_p4_site('yt_page');"><i class="fa fa-youtube-play"></i></a></li>
-        <li><a href="#" onclick="goto_p4_site('insta_page');"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('fb_page');"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('tw_page');"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('yt_page');"><i class="fa fa-youtube-play"></i></a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('insta_page');"><i class="fa fa-instagram"></i></a></li>
       </ul>
 
       <ul class="list-unstyled footer-links">
-        <li><a href="#" onclick="goto_p4_site('news_page');">News</a></li>
-        <li><a href="#" onclick="goto_p4_site('about_page');">About</a></li>
-        <li><a href="#" onclick="goto_p4_site('jobs_page');">Jobs</a></li>
-        <li><a href="#" onclick="goto_p4_site('press_page');">Press Centre</a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('news_page');">News</a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('about_page');">About</a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('jobs_page');">Jobs</a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('press_page');">Press Centre</a></li>
       </ul>
 
       <ul class="list-unstyled footer-links-secondary">
-        <li><a href="#" onclick="goto_p4_site('privacy_page');">Privacy</a></li>
-        <li><a href="#" onclick="goto_p4_site('community_policy_page');">COMMUNITY POLICY</a></li>
-        <li><a href="#" onclick="goto_p4_site('search_archive_page');">SEARCH THE ARCHIVE</a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('privacy_page');">Privacy</a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('community_policy_page');">COMMUNITY POLICY</a></li>
+        <li><a href="javascript:void(0);" onclick="goto_p4_site('search_archive_page');">SEARCH THE ARCHIVE</a></li>
       </ul>
 
       <p class="copyright-text col-md-8">
@@ -269,7 +269,6 @@ var p4_site_url = "https://www.greenpeace.org/international/";
 var p4_site_act_page = "https://www.greenpeace.org/international/act/";
 var p4_site_explore_page = "https://www.greenpeace.org/international/explore/";
 var p4_site_donate_btn = "https://secured.greenpeace.org/international/en/supportus/?_ga=2.256767427.937523877.1515410303-280997801.1515410303";
-var p4_site_search_page = "";
 
 /*Footer links*/
 var p4_fb_page = "https://www.facebook.com/greenpeace.international";
@@ -363,6 +362,13 @@ function goto_p4_site(page_id)
 		window.location = p4_site_url;
 		return false;
 	}
+}
+
+function search_form()
+{
+	var searchme = $("#searchme").val();
+	window.location = p4_site_url+"?orderby=relevant&s="+searchme;
+	return false;
 }
 
 </script>

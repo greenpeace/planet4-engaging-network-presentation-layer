@@ -2079,15 +2079,18 @@ body.home { background-image: repeating-linear-gradient(-61deg, rgba(212, 236, 2
     </button>
     <ul id="navbar-dropdown" class="navbar-dropdown list-unstyled">
       <li class="nav-item">
+	    <button class="close-navbar-dropdown">
+          <span class="screen-reader-text">Close Menu</span>
+        </button>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" onclick="goto_p4_site('act_page');">Act</a>
+        <a class="nav-link" href="javascript:void(0);" onclick="goto_p4_site('act_page');">Act</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" onclick="goto_p4_site('explore_page');">Explore</a>
+        <a class="nav-link" href="javascript:void(0);" onclick="goto_p4_site('explore_page');">Explore</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-donate" href="#" onclick="goto_p4_site('donate_page');">Donate</a>
+        <a class="btn btn-donate" href="javascript:void(0);" onclick="goto_p4_site('donate_page');">Donate</a>
       </li>
     </ul>
     <button
@@ -2100,7 +2103,7 @@ body.home { background-image: repeating-linear-gradient(-61deg, rgba(212, 236, 2
       <span class="screen-reader-text">Toggle search form</span>
     </button>
     <form id="navbar-search" class="form nav-item nav-search-wrap" onsubmit="search_form(); return false;">
-      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="searchme">
       <button class="top-nav-search-btn" type="submit">
         <i class="fa fa-search"></i>
         <span class="screen-reader-text">Search</span>
