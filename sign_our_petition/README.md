@@ -11,21 +11,21 @@ Create new template in EN using below 2 files -
 ## EN Form block setup
 
 Steps :
-* Select Add row >> One column structure
-* From Components, drag Code block in One column structure
-* In that Code block copy the content of sign-our-petition-top-code-block.html file
-* From Forms, drag Form block
+* Select Add row >> **One column** structure
+* From Components, drag **Code block** in **One column** structure
+* In that **Code block** copy the content of ```sign-our-petition-top-code-block.html``` file
+* From Forms, drag **Form block**
 	- In form block select First name, Last name, Email, Country and optin checkbox and submit button fields
-	- In Form block >> "Form block styling", add 'Custom class names' as 'petition-form'
-* Again from Components, drag Code block below to Form block and copy the content from sign-our-petition-bottom-code-block.html
+	- In Form block >> **Form block styling**, add **Custom class names** as **petition-form**
+* Again from Components, drag Code block below to **Form block** and copy the content from ```sign-our-petition-bottom-code-block.html```
 
 ### How to edit background image on petition page?
 
 To use image on EN plateform, we have 2 options.
 1. Use image link
-2. Upload image on EN plateform using Image block(Just to copy Image path to use further)
+2. Upload image on EN plateform using **Image block**(Just to copy Image path to use further)
 
-In sign-our-petition-top-code-block.html file edit below code to update petition backgraund image
+In ```sign-our-petition-top-code-block.html``` file edit below code to update petition backgraund image
 
 ```
     <div class="page-header-background">
