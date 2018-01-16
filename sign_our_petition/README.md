@@ -34,7 +34,7 @@ To use image on EN plateform, we have 2 options.
 1. Use image link
 2. Upload image on EN plateform using **Image block**(Just to copy Image path to use further)
 
-In ```sign-our-petition-top-code-block.html``` file edit below code to update petition backgraund image
+In ```sign-our-petition-top-code-block.html``` file edit below code to update petition backgraund image. The recommended backgraund image dimensions are 2000 pixels (width) by 2000 pixels (height).
 
 ```
     <div class="page-header-background">
@@ -45,7 +45,7 @@ In ```sign-our-petition-top-code-block.html``` file edit below code to update pe
 
 ### How to edit background image on Thank you page?
 
-In ```thank-you-top-code-block.html``` file edit below code to update Thank you page backgraund image
+In ```thank-you-top-code-block.html``` file edit below code to update Thank you page backgraund image.
 
 ```
     <div class="page-header-background">
